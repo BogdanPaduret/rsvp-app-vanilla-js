@@ -59,9 +59,11 @@ header section.ceva{
     padding: 0px;
 }
 section.ceva input{
+    padding: 10px;
     border: none;
     height: 100%;
     width: 217px;
+    outline: none;
 }
 section.ceva button{
     height: 90%;
