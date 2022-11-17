@@ -93,17 +93,41 @@ main section.list-cards{
     /* border: 1px solid black; */
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
     gap: 15px;
 
 }
 
 div.card{
     border: 1px solid #f0f0f0;
-    height: 100px;
+    /* height: 100px; */
     background-color: #ffffff;
+
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+div.card .card-input{
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+div.card .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 250px;
 }
 div.card button{
+    margin: 0px;
     padding: 5px;
     border-radius: 5px;
     color: white;
