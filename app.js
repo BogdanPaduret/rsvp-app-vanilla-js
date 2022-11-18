@@ -4,8 +4,8 @@ let buttonAddInvitee=document.querySelector("header section.ceva button");
 let inputAddInvitee=document.querySelector("header section.ceva input");
 
 let triggerHideNoAnswer=document.querySelector("main section.list-head div.answer.container input#hide-no-answer");
-triggerHideNoAnswer.checked=false;
 
+initPage();
 
 
 
@@ -25,5 +25,11 @@ inputAddInvitee.addEventListener("keydown", (e)=>{
 
 triggerHideNoAnswer.addEventListener("click", (e)=>{
     let value=e.target.checked;
-    alert(value);
+    
+    if(value==true){
+        hideUnconfirmed();
+    }
+    if(value==false){
+        showUnconfirmed();
+    }
 })

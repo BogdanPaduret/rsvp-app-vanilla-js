@@ -1,3 +1,11 @@
+function initPage(){
+    triggerHideNoAnswer.checked=false;
+    showUnconfirmed();
+}
+
+
+
+
 function createCard(list, name){
     let mainContainer=document.createElement("div");
     let header=document.createElement("h3");
@@ -46,10 +54,67 @@ function initCard(){
         createCard(listContainer,name);
         inputAddInvitee.value="";
     }
-};
+}
 
 
 
 function checkTextInput(text){
     return !text=="";
+}
+
+
+function getCardCheckboxes(){
+    return document.querySelectorAll("main section.list-cards .card .card-input input");
+}
+function getCheckboxCard(checkbox){
+    return checkbox.parentNode.parentNode;
+}
+
+function hideUnconfirmed(){
+    console.log("hiding things...");
+    let cardCheckboxes=getCardCheckboxes();
+
+    console.log(cardCheckboxes.length);
+
+    for(let i=0;i<cardCheckboxes.length;i++){
+        let element=cardCheckboxes[i];
+        console.log(element);
+        if(element.type=="checkbox"){
+            console.log("checkbox found");
+            console.log(element.checked)
+            if(element.checked==true){
+                console.log("checkbox to hide found");
+                let card=getCheckboxCard(element);
+                console.log(card);
+                // card.toggleAttribute("hidden");
+                console.log(card.style.display);
+                card.style.display="none";
+            }
+        }else{
+            alert("not a checkbox!");
+        }
+    }
+
+}
+
+function showUnconfirmed(){
+    console.log("showing things...");
+    let cardCheckboxes=getCardCheckboxes();
+
+    console.log(cardCheckboxes.length);
+
+    for(let i=0;i<cardCheckboxes.length;i++){
+        let element=cardCheckboxes[i];
+        console.log(element);
+
+        if(element.type=="checkbox"){
+            console.log("checkbox found");
+            console.log(element.checked);
+
+            let card=getCheckboxCard(element);
+            console.log(card);
+
+            card.removeAttribute("style");
+        }
+    }
 }
