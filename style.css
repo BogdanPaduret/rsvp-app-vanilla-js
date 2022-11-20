@@ -108,6 +108,15 @@ main section.list-cards.container .card{
     gap: 15px;
 }
 
+main section.list-cards.container .card input.title{
+    outline: 0px;
+    border-bottom: 3px solid grey;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 20px;
+    font-style: italic;
+    color: grey;
+}
+
 div.card{
     border: 1px solid #f0f0f0;
     /* height: 100px; */
@@ -143,6 +152,14 @@ div.card button{
     color: white;
 }
 
+div.card .title{
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    width: 100%;
+}
 
 
 div.card button:first-of-type{
@@ -169,3 +186,4 @@ div.card button:last-of-type:active{
     position: absolute;
     bottom: -20px;
 }
+
