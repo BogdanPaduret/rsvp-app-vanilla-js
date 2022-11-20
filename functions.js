@@ -181,7 +181,18 @@ function saveCard(card) {
 }
 
 // delete card
-function removeCard(card) {}
+function removeCard(card) {
+    let cardName = card.querySelector("h3");
+    console.log(cardName);
+    let answer = confirm(
+        "Are you sure you want to remove the card with name -" + cardName + "-?"
+    );
+    console.log(answer);
+
+    if (answer) {
+        card.parentNode.removeChild(card);
+    }
+}
 
 // -------- HELPERS --------
 
